@@ -1,6 +1,29 @@
 <template>
   <q-page class="flex column" transition-show="jump-down">
     <div>
+      <h6 class="text-primary">Venir jusqu'à l'événement</h6>
+      <q-card>
+        <q-card-section>
+          <q-list separator>
+            <q-item>
+              <q-item-section>
+                <q-item-label>Adresse</q-item-label>
+                <q-item-label caption>
+                  15-13 Rue Sainte-Opportune, 86000 Poitiers
+                </q-item-label>
+              </q-item-section>
+            </q-item>
+            <q-item>
+              <q-item-section>
+                <q-item-label>Venir en bus</q-item-label>
+                <q-item-label caption>
+                  <a href="https://www.vitalis-poitiers.fr/itineraires/">trouvez votre itinéraire</a>
+                </q-item-label>
+              </q-item-section>
+            </q-item>
+          </q-list>
+        </q-card-section>
+      </q-card>
       <h6 class="text-primary">Les lieux</h6>
       <q-card class="map-container">
         <q-card-section>
@@ -19,17 +42,24 @@
       <h6 class="text-primary">Organisateurs</h6>
       <q-card>
         <q-card-section>
-          <p>Site internet : <a href="http://poitierscollectif.fr/" target="_blank">Poitiers Collectif</a></p>
-          <p>Adresse : 86000 Poitiers</p>
-          <p></p>
-        </q-card-section>
-      </q-card>
-      <h6 class="text-primary">Venir jusqu'à l'événement</h6>
-      <q-card>
-        <q-card-section>
-          <p>Site internet : <a href="http://poitierscollectif.fr/" target="_blank">Poitiers Collectif</a></p>
-          <p>Adresse : 86000 Poitiers</p>
-          <p></p>
+          <q-list separator>
+            <q-item>
+              <q-item-section>
+                <q-item-label>Site internet</q-item-label>
+                <q-item-label caption>
+                  <a href="http://poitierscollectif.fr/" target="_blank">Poitiers Collectif</a>
+                </q-item-label>
+              </q-item-section>
+            </q-item>
+            <q-item>
+              <q-item-section>
+                <q-item-label>Adresse</q-item-label>
+                <q-item-label caption>
+                  86000 Poitiers
+                </q-item-label>
+              </q-item-section>
+            </q-item>
+          </q-list>
         </q-card-section>
       </q-card>
     </div>
