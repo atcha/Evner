@@ -9,7 +9,7 @@
     </q-header>
 
     <q-page-container class="bg-grey-3">
-      <router-view />
+      <router-view class="child-slide"></router-view>
     </q-page-container>
 
     <q-footer elevated class="bg-white text-grey-8">
@@ -29,7 +29,14 @@ export default {
   name: 'MyLayout',
   data () {
     return {
+      transitionName: ''
     }
+  },
+  beforeRouteUpdate (to, from, next) {
+    const toDepth = to.path.split('/').length
+    const fromDepth = from.path.split('/').length
+    this.transitionName = toDepth < fromDepth ? 'overlap-left' : 'overlap-right'
+    next()
   }
 }
 </script>
@@ -39,5 +46,5 @@ export default {
     background: linear-gradient(145deg,$primary 11%,darken($primary, 20%) 75%);
 
   .q-page
-    padding 15px
+    padding 15px 0;
 </style>
