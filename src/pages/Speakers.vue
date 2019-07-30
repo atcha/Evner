@@ -6,7 +6,10 @@
 
 <script>
 export default {
-  name: 'Speakers'
+  name: 'Speakers',
+  mounted () {
+    this.$store.commit('siteInfo/updateSiteTitle', 'Les intervenants')
+  }
 }
 </script>
 

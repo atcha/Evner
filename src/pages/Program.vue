@@ -6,8 +6,7 @@
         enter-active-class="animated slideInUp"
         leave-active-class="animated slideOutUp"
       >
-        <h4>Planning</h4>
-        <q-card key="first" class="shadow-8">
+        <q-card key="first" class="no-shadow">
           <q-card-section>
             <div class="flex row items-center text-bold"><q-icon name="access_time" />13h30 - 14h30</div>
             <q-list separator>
@@ -23,17 +22,17 @@
             </q-list>
           </q-card-section>
         </q-card>
-        <q-card key="second" class="shadow-8">
+        <q-card key="second" class="no-shadow">
           <q-card-section>
             <div class="text-bold"><q-icon name="access_time" /> 14h30 - 16h30</div>
             <q-list separator>
               <q-item>
                 <q-item-section>
                   <q-item-label class="text-bold text-primary">Atelier A</q-item-label>
-                  <q-item-label caption>Courte explication de l'atelier</q-item-label>
+                    <q-item-label caption>Oser s'impliquer "dans la vie politique locale"</q-item-label>
                 </q-item-section>
-                <q-item-section side>
-                  <q-item-label class="flex row items-center" caption><q-icon name="person" class="text-secondary" /> Intervenant</q-item-label>
+                <q-item-section side top>
+                  <q-item-label class="flex row items-center" caption><q-icon name="person" class="text-secondary" /> Christian Proust</q-item-label>
                   <q-item-label class="flex row items-center" caption><q-icon name="place" class="text-secondary" /> Salle A</q-item-label>
                 </q-item-section>
               </q-item>
@@ -42,7 +41,7 @@
                   <q-item-label class="text-bold text-primary">Atelier B</q-item-label>
                   <q-item-label caption>Courte explication de l'atelier</q-item-label>
                 </q-item-section>
-                <q-item-section side>
+                <q-item-section side top>
                   <q-item-label class="flex row items-center" caption><q-icon name="person" class="text-secondary" /> Intervenant</q-item-label>
                   <q-item-label class="flex row items-center" caption><q-icon name="place" class="text-secondary" /> Amphy J</q-item-label>
                 </q-item-section>
@@ -57,7 +56,10 @@
 
 <script>
 export default {
-  name: 'Program'
+  name: 'Program',
+  mounted () {
+    this.$store.commit('siteInfo/updateSiteTitle', 'Planning')
+  }
 }
 </script>
 

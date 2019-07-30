@@ -3,7 +3,7 @@
     <q-header>
       <q-toolbar>
         <q-toolbar-title>
-          La Rentrée des Initiatives Citoyennes
+          {{ siteTitle }}
         </q-toolbar-title>
       </q-toolbar>
     </q-header>
@@ -30,6 +30,13 @@ export default {
   data () {
     return {
       transitionName: ''
+    }
+  },
+  computed: {
+    siteTitle: {
+      get () {
+        return this.$store.state.siteInfo.siteTitle
+      }
     }
   },
   beforeRouteUpdate (to, from, next) {

@@ -6,7 +6,10 @@
 
 <script>
 export default {
-  name: 'About'
+  name: 'About',
+  mounted () {
+    this.$store.commit('siteInfo/updateSiteTitle', 'A propos')
+  }
 }
 </script>
 

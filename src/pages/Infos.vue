@@ -83,6 +83,7 @@ export default {
   },
   mounted () {
     this.$refs.map.mapObject._onResize()
+    this.$store.commit('siteInfo/updateSiteTitle', 'Informations')
   },
   data () {
     return {
