@@ -24,7 +24,7 @@
         </q-card>
         <q-card key="second" class="shadow-8">
           <q-card-section>
-            <div class="text-h6"><q-icon name="access_time" /> 14h30 - 16h30</div>
+            <div class="text-bold"><q-icon name="access_time" /> 14h30 - 16h30</div>
             <q-list separator>
               <q-item>
                 <q-item-section>
