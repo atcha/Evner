@@ -6,17 +6,19 @@
         enter-active-class="animated slideInUp"
         leave-active-class="animated slideOutUp"
       >
-        <q-card v-for="(event, index) in events" :key="'card-' + index" class="no-shadow">
+
+        <q-card v-for="(eventByHour, index) in eventsByHour" :key="'card-' + index" class="no-shadow">
           <q-card-section>
-            <div class="flex row items-center text-bold"><q-icon name="access_time" />{{ event.hour }}</div>
-            <q-list separator>
-              <q-item>
+            <div class="flex row items-center text-bold"><q-icon name="access_time" />{{ index }}</div>
+            <q-list v-for="event in eventByHour" :key="event.id" separator>
+              <q-item :class="'type-' + event.type">
                 <q-item-section>
-                  <q-item-label class="text-bold text-primary">Accueil des participants</q-item-label>
+                  <q-item-label class="text-bold text-primary">{{ event.title }}</q-item-label>
+                  <q-item-label v-if="event.resume" caption>{{ event.resume }}</q-item-label>
                 </q-item-section>
                 <q-item-section side>
-                  <q-item-label class="flex row items-center" caption><q-icon name="person" class="text-secondary" />Equipe poitiers collectif</q-item-label>
-                  <q-item-label class="flex row items-center" caption><q-icon name="place" class="text-secondary" />Hall d'accueil</q-item-label>
+                  <q-item-label class="flex row items-center" caption><q-icon name="person" class="text-secondary" />{{ event.speaker }}</q-item-label>
+                  <q-item-label class="flex row items-center" caption><q-icon name="place" class="text-secondary" />{{ event.room }}</q-item-label>
                 </q-item-section>
               </q-item>
             </q-list>
@@ -75,12 +77,12 @@ export default {
   name: 'Program',
   data () {
     return {
-      events: []
+      eventsByHour: []
     }
   },
   mounted () {
-    this.events = this.$store.state.events.events
-    console.log(this.$store.state.events.events)
+    this.eventsByHour = this.$store.getters['events/getByHours']
+    console.log(this.eventsByHour)
     this.$store.commit('siteInfo/updateSiteTitle', 'Planning')
   }
 }
@@ -91,4 +93,15 @@ export default {
     margin-top 15px
   .q-icon
     margin-right 5px
+
+  [class*="type-"]
+    border-left 2px solid
+  .type-administratif
+    border-color $administratif
+  .type-conference
+    border-color $conference
+  .type-atelier
+    border-color $atelier
+  .type-divertissement
+    border-color $divertissement
 </style>
