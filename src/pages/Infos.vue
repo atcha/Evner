@@ -6,13 +6,13 @@
         enter-active-class="animated slideInUp"
         leave-active-class="animated slideOutUp"
       >
-        <h6 class="text-primary" key="head-path">Venir jusqu'à l'événement</h6>
+        <h6 class="text-primary" key="head-path">Comment nous rejoindre ?</h6>
         <q-card key="section-path" class="no-shadow">
           <q-card-section>
             <q-list separator>
               <q-item>
                 <q-item-section>
-                  <q-item-label>Adresse</q-item-label>
+                  <q-item-label class="text-bold">Adresse</q-item-label>
                   <q-item-label caption>
                     15-13 Rue Sainte-Opportune, 86000 Poitiers
                   </q-item-label>
@@ -20,9 +20,16 @@
               </q-item>
               <q-item>
                 <q-item-section>
-                  <q-item-label>Venir en bus</q-item-label>
+                  <q-item-label class="text-bold">Venir en bus</q-item-label>
                   <q-item-label caption>
-                    <a href="https://www.vitalis-poitiers.fr/itineraires/">trouvez votre itinéraire</a>
+                    <q-btn icon="directions_bus"
+                           label="trouvez votre itinéraire"
+                           unelevated
+                           color="accent"
+                           type="a"
+                           href="https://www.vitalis-poitiers.fr/itineraires/"
+                           target="_blank"
+                           replace />
                   </q-item-label>
                 </q-item-section>
               </q-item>
@@ -50,15 +57,22 @@
             <q-list separator>
               <q-item>
                 <q-item-section>
-                  <q-item-label>Site internet</q-item-label>
+                  <q-item-label class="text-bold">Site internet</q-item-label>
                   <q-item-label caption>
-                    <a href="http://poitierscollectif.fr/" target="_blank">Poitiers Collectif</a>
+                    <q-btn icon="arrow_forward"
+                           label="Site de Poitiers Collectif"
+                           unelevated
+                           color="primary"
+                           type="a"
+                           href="http://poitierscollectif.fr/"
+                           target="_blank"
+                           replace />
                   </q-item-label>
                 </q-item-section>
               </q-item>
               <q-item>
                 <q-item-section>
-                  <q-item-label>Adresse</q-item-label>
+                  <q-item-label class="text-bold">Adresse</q-item-label>
                   <q-item-label caption>
                     86000 Poitiers
                   </q-item-label>
