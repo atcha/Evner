@@ -20,7 +20,6 @@
                 <q-item-label v-if="event.resume" caption>{{ event.resume }}</q-item-label>
               </q-item-section>
               <q-item-section side>
-                <q-item-label class="flex row items-center" caption><q-icon name="person" class="text-secondary" />{{ event.speaker }}</q-item-label>
                 <q-item-label class="flex row items-center" caption><q-icon name="place" class="text-secondary" />{{ event.room }}</q-item-label>
               </q-item-section>
             </q-item>
