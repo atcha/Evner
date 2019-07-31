@@ -113,8 +113,6 @@ export default {
       markerFacDroit: [46.584195223376284, 0.34446363179586115],
       markerEelv: [46.584227, 0.34203]
     }
-  },
-  methods: {
   }
 }
 </script>

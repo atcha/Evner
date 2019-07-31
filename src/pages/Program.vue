@@ -8,11 +8,11 @@
       >
         <div class="q-pa-md" key="btn-days">
           <q-btn-group unelevated spread>
-            <q-btn label="Samedi" color="accent" class="is-active" />
-            <q-btn label="Dimache" color="accent" />
+            <q-btn label="Samedi" color="accent" :class="{ 'is-active': (activeDay === 'saturday') }" @click="getEventsByDay('saturday')" />
+            <q-btn label="Dimanche" color="accent" :class="{ 'is-active': (activeDay === 'sunday') }" @click="getEventsByDay('sunday')" />
           </q-btn-group>
         </div>
-        <q-card v-for="(eventByHour, index) in eventsByHour" :key="'card-' + index" class="no-shadow">
+        <q-card v-for="(eventByHour, index) in eventsByDayByHour" :key="'card-' + index" class="no-shadow">
           <q-card-section>
             <div class="flex row items-center text-bold"><q-icon name="access_time" />{{ index }}</div>
             <q-list v-for="event in eventByHour" :key="event.id" separator>
@@ -39,12 +39,19 @@ export default {
   name: 'Program',
   data () {
     return {
-      eventsByHour: []
+      eventsByDayByHour: [],
+      activeDay: 'saturday'
     }
   },
   mounted () {
-    this.eventsByHour = this.$store.getters['events/getByHours']
+    this.getEventsByDay('saturday')
     this.$store.commit('siteInfo/updateSiteTitle', 'Planning')
+  },
+  methods: {
+    getEventsByDay (day) {
+      this.eventsByDayByHour = this.$store.getters['events/getByDayByHours'](day)
+      this.activeDay = day
+    }
   }
 }
 </script>
@@ -54,17 +61,6 @@ export default {
     margin-top 15px
   .q-icon
     margin-right 5px
-
-  [class*="type-"]
-    border-left 2px solid
-  .type-administratif
-    border-color $administratif
-  .type-conference
-    border-color $conference
-  .type-atelier
-    border-color $atelier
-  .type-divertissement
-    border-color $divertissement
 
   .q-btn
     &.is-active

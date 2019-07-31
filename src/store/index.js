@@ -4,6 +4,7 @@ import Vuex from 'vuex'
 // we first import the module
 import siteInfo from './siteInfo'
 import events from './events'
+import speaker from './speaker'
 
 Vue.use(Vuex)
 
@@ -12,7 +13,8 @@ export default function (/* { ssrContext } */) {
     modules: {
       // then we reference it
       siteInfo,
-      events
+      events,
+      speaker
     },
 
     // enable strict mode (adds overhead!)
@@ -35,6 +37,10 @@ export default function (/* { ssrContext } */) {
     module.hot.accept(['./events'], () => {
       const newEvents = require('./events').default
       Store.hotUpdate({ modules: { events: newEvents } })
+    })
+    module.hot.accept(['./speaker'], () => {
+      const newSpeaker = require('./speaker').default
+      Store.hotUpdate({ modules: { speaker: newSpeaker } })
     })
   }
 
