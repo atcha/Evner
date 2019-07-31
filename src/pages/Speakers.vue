@@ -20,7 +20,8 @@
                 <q-item-label v-if="event.resume" caption>{{ event.resume }}</q-item-label>
               </q-item-section>
               <q-item-section side>
-                <q-item-label class="flex row items-center" caption><q-icon name="place" class="text-secondary" />{{ event.room }}</q-item-label>
+                <q-item-label class="flex row items-center"><q-icon name="access_time" class="text-secondary" /><span>{{ event.hour }}</span></q-item-label>
+                <q-item-label class="flex row items-center"><q-icon name="place" class="text-secondary" /><span>{{ event.room }}</span></q-item-label>
               </q-item-section>
             </q-item>
           </q-list>
@@ -52,4 +53,7 @@ export default {
 <style lang="stylus" scoped>
   .q-card:not(:first-child)
     margin-top 15px
+
+  .q-icon
+    margin-right 5px
 </style>
