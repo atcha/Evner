@@ -103,13 +103,13 @@ module.exports = function (ctx) {
       // workboxPluginMode: 'InjectManifest',
       // workboxOptions: {}, // only for NON InjectManifest
       manifest: {
-        // name: 'event planer',
-        // short_name: 'event planer',
-        // description: 'This app is used to planify your event. Show the program etc',
+        name: 'La Rentrée des Initiatives Citoyennes',
+        short_name: 'La Rentrée',
+        description: 'Retrouvez toutes les informations pratique sur l\'événement',
         display: 'standalone',
         orientation: 'portrait',
-        background_color: '#ffffff',
-        theme_color: '#027be3',
+        background_color: '#eeeeee',
+        theme_color: '#009aaf',
         icons: [
           {
             'src': 'statics/icons/icon-128x128.png',

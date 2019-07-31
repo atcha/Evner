@@ -11,8 +11,9 @@
           <h6 class="text-bold text-primary">Christian Proust</h6>
           <p>Il connait bien le monde politique local pour avoir travaillé plus de vingt ans auprès d’élus, maires et présidents de Conseil général. Après avoir été directeur général adjoint des services d’un Département, il s'est présenté à des élections municipales puis départementales. Il est également biographe, il raconte la vie de familles et d’institutions (collectivités, associations).</p>
         </q-card-section>
-        <q-separator dark />
+        <q-separator />
         <q-card-section>
+          <h6 class="text-secondary">Ces interventions</h6>
           <q-list v-for="event in getEventsBySpeaker('Christian Proust')" :key="event.id" separator>
             <q-item :class="'type-' + event.type">
               <q-item-section>

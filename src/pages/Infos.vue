@@ -6,8 +6,9 @@
         enter-active-class="animated slideInUp"
         leave-active-class="animated slideOutUp"
       >
-        <h6 class="text-primary" key="head-path">Comment nous rejoindre ?</h6>
-        <q-card key="section-path" class="no-shadow">
+        <div key="path-container">
+          <h6 class="text-primary">Comment nous rejoindre ?</h6>
+          <q-card class="no-shadow">
           <q-card-section>
             <q-list separator>
               <q-item>
@@ -36,8 +37,10 @@
             </q-list>
           </q-card-section>
         </q-card>
-        <h6 class="text-primary" key="head-places">Les lieux</h6>
-        <q-card class="map-container no-shadow" key="section-places">
+        </div>
+        <div key="places-container">
+          <h6 class="text-primary">Les lieux</h6>
+          <q-card class="map-container no-shadow">
           <q-card-section>
             <l-map
               ref="map"
@@ -51,8 +54,10 @@
             </l-map>
           </q-card-section>
         </q-card>
-        <h6 class="text-primary" key="head-whois">Organisateurs</h6>
-        <q-card class="no-shadow" key="section-whois">
+        </div>
+        <div key="whois-container">
+          <h6 class="text-primary">Organisateurs</h6>
+          <q-card class="no-shadow">
           <q-card-section>
             <q-list separator>
               <q-item>
@@ -81,6 +86,7 @@
             </q-list>
           </q-card-section>
         </q-card>
+        </div>
       </transition-group>
     </div>
   </q-page>
@@ -116,6 +122,10 @@ export default {
 <style lang="stylus" scoped>
   .main
     padding 15px
+    div
+      &:first-of-type
+        h6
+          margin-top 0
   .map-container
     width 100%
 </style>
