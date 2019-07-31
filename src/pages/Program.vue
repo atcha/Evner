@@ -6,7 +6,12 @@
         enter-active-class="animated slideInUp"
         leave-active-class="animated slideOutUp"
       >
-
+        <div class="q-pa-md" key="btn-days">
+          <q-btn-group spread>
+            <q-btn label="Samedi" unelevated="true" color="accent" class="is-active" />
+            <q-btn label="Dimache" unelevated="true" color="accent" />
+          </q-btn-group>
+        </div>
         <q-card v-for="(eventByHour, index) in eventsByHour" :key="'card-' + index" class="no-shadow">
           <q-card-section>
             <div class="flex row items-center text-bold"><q-icon name="access_time" />{{ index }}</div>
@@ -104,4 +109,8 @@ export default {
     border-color $atelier
   .type-divertissement
     border-color $divertissement
+
+  .q-btn
+    &.is-active
+      background-color darken($accent, 10) !important
 </style>
