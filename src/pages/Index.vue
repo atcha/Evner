@@ -1,5 +1,10 @@
 <template>
   <q-page>
+    <div class="q-pa-md">
+      <p class="text-subtitle1 text-grey-10">
+        La Rentrée citoyenne approche. L'application va vous permettre de préparer l'événement.
+      </p>
+    </div>
     <q-card flat class="bg-positive text-white">
       <q-card-section>
         <div class="text-h6">Vos favoris</div>
