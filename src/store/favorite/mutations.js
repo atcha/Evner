@@ -3,9 +3,7 @@ import { LocalStorage } from 'quasar'
 export const initialisseFavorite = (state) => {
   if (LocalStorage.getItem('favorites')) {
     // Replace the state object with the stored item
-    // replaceState(
-    //   Object.assign(state, localStorage.getItem('favorites'))
-    // )
+    state.favorites = JSON.parse(localStorage.getItem('favorites').replace('__q_strn|', ''))
   }
 }
 

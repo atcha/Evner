@@ -3,9 +3,10 @@
     <q-list separator>
       <q-item :class="'type-' + event.type">
         <q-item-section>
-          <q-item-label class="text-bold text-primary">{{ event.title }}</q-item-label>
+          <q-item-label class="text-bold text-primary">{{ event.title }} <q-space/> <span class="text-black text-body2">{{ event.hour }}</span></q-item-label>
           <q-item-label v-if="event.resume" caption>{{ event.resume }}</q-item-label>
-          <q-btn v-if="event.content.length > 0" class="q-btn-detail"
+          <q-btn v-if="event.content.length > 0"
+                 class="q-btn-detail"
                  label="Détails"
                  icon="zoom_in"
                  unelevated
@@ -20,7 +21,7 @@
           <q-item-label class="flex row items-center" caption>
             <q-icon name="place" class="text-secondary" />{{ event.room }}
           </q-item-label>
-          <q-item-label class="flex row items-center" caption>
+          <q-item-label v-if="!favorite" class="flex row items-center" caption>
             <q-icon :name="favIcon"
                     size="1rem"
                     color="accent"
@@ -49,7 +50,7 @@
 <script>
 export default {
   name: 'Event',
-  props: ['event'],
+  props: ['event', 'favorite'],
   data () {
     return {
       isDetailOpen: false,
@@ -87,6 +88,7 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style lang="stylus" scoped>
+  .q-icon
+    margin-right 5px
 </style>
