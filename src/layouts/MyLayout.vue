@@ -51,8 +51,16 @@ export default {
 
 <style lang="stylus">
   .q-header
-    background: linear-gradient(145deg,$primary 11%,darken($primary, 20%) 75%);
+    background linear-gradient(145deg,$primary 11%,darken($primary, 20%) 75%)
 
   .q-page
-    padding 15px 0;
+    padding 15px 0
+
+  .q-tab__label
+    font-size 11px
+  .q-tab__icon
+    font-size 16px
+
+  .q-tab--active
+    color $primary !important
 </style>

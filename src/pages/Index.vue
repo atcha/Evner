@@ -3,6 +3,7 @@
     <q-card flat class="bg-accent text-white">
       <q-card-section>
         <div class="text-h6">Vos favoris</div>
+        <div class="text-subtitle2">Les favoris permettent de vous prévenir quand une intervention commence</div>
       </q-card-section>
       <q-card-section>
         <event v-for="event in favoriteEvents" :key="event.id" :event="event"></event>
