@@ -57,6 +57,9 @@ export default {
       favIcon: 'favorite_border'
     }
   },
+  mounted () {
+    this.isFavorite()
+  },
   methods: {
     toggleFav () {
       if (!this.isAddToFav) {
@@ -75,6 +78,10 @@ export default {
         this.favIcon = 'favorite_border'
       }
       this.isAddToFav = !this.isAddToFav
+    },
+    isFavorite () {
+      this.isAddToFav = this.$store.state.favorite.favorites.includes(this.event.id)
+      if (this.isAddToFav) this.favIcon = 'favorite'
     }
   }
 }

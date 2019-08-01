@@ -11,5 +11,7 @@ export function getBySpeaker (state) {
 }
 
 export function getByids (state) {
-  return ids => state.events.filter((event) => event.id === ids)
+  return ids => state.events.filter((event) => {
+    return ids.find(id => event.id === id)
+  })
 }

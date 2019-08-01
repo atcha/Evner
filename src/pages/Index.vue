@@ -32,9 +32,7 @@ export default {
   methods: {
     getFavoritesEvents () {
       this.favorites = this.$store.state.favorite.favorites
-      this.favorites.forEach(id => {
-        this.favoriteEvents.push(this.$store.getters['events/getByids'](id))
-      })
+      this.favoriteEvents = this.$store.getters['events/getByids'](this.favorites)
       console.log(this.favorites, this.favoriteEvents)
     }
   }
