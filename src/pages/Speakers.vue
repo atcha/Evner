@@ -6,7 +6,7 @@
       leave-active-class="animated slideOutUp"
     >
       <q-card v-for="(speaker, index) in speakers" :key="'card-intervant-' + index" class="no-shadow">
-        <img :src="'/assets/' + speaker.picture">
+        <img :src="'/statics/' + speaker.picture">
         <q-card-section>
           <h6 class="text-bold text-primary">{{ speaker.name }}</h6>
           <p>{{ speaker.bio }}</p>
