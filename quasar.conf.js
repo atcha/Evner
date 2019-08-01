@@ -51,7 +51,8 @@ module.exports = function (ctx) {
         'QCardSection',
         'QBtnGroup',
         'QBtn',
-        'QSeparator'
+        'QSeparator',
+        'QSpinner'
       ],
 
       directives: [

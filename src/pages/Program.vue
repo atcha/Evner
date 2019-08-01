@@ -12,23 +12,38 @@
             <q-btn label="Dimanche" color="accent" :class="{ 'is-active': (activeDay === 'sunday') }" @click="getEventsByDay('sunday')" />
           </q-btn-group>
         </div>
-        <q-card v-for="(eventByHour, index) in eventsByDayByHour" :key="'card-' + index" class="no-shadow">
-          <q-card-section>
-            <div class="flex row items-center text-bold"><q-icon name="access_time" />{{ index }}</div>
-            <q-list v-for="event in eventByHour" :key="event.id" separator>
-              <q-item :class="'type-' + event.type">
-                <q-item-section>
-                  <q-item-label class="text-bold text-primary">{{ event.title }}</q-item-label>
-                  <q-item-label v-if="event.resume" caption>{{ event.resume }}</q-item-label>
-                </q-item-section>
-                <q-item-section side>
-                  <q-item-label class="flex row items-center" caption><q-icon name="person" class="text-secondary" />{{ event.speaker }}</q-item-label>
-                  <q-item-label class="flex row items-center" caption><q-icon name="place" class="text-secondary" />{{ event.room }}</q-item-label>
-                </q-item-section>
-              </q-item>
-            </q-list>
-          </q-card-section>
-        </q-card>
+        <div key="events-container" class="events-container">
+          <div class="flex flex-center loader-container" key="loader" v-if="eventsOnLoad">
+            <q-spinner
+              color="primary"
+              size="3em"
+            />
+          </div>
+          <transition-group
+            v-else
+            appear
+            enter-active-class="animated fadeIn"
+            leave-active-class="animated fadeOut"
+          >
+            <q-card v-for="(eventByHour, index) in eventsByDayByHour" :key="'card-' + index" class="no-shadow">
+              <q-card-section>
+                <div class="flex row items-center text-bold"><q-icon name="access_time" />{{ index }}</div>
+                <q-list v-for="event in eventByHour" :key="event.id" separator>
+                  <q-item :class="'type-' + event.type">
+                    <q-item-section>
+                      <q-item-label class="text-bold text-primary">{{ event.title }}</q-item-label>
+                      <q-item-label v-if="event.resume" caption>{{ event.resume }}</q-item-label>
+                    </q-item-section>
+                    <q-item-section side>
+                      <q-item-label class="flex row items-center" caption><q-icon name="person" class="text-secondary" />{{ event.speaker }}</q-item-label>
+                      <q-item-label class="flex row items-center" caption><q-icon name="place" class="text-secondary" />{{ event.room }}</q-item-label>
+                    </q-item-section>
+                  </q-item>
+                </q-list>
+              </q-card-section>
+            </q-card>
+          </transition-group>
+        </div>
       </transition-group>
     </div>
   </q-page>
@@ -40,7 +55,8 @@ export default {
   data () {
     return {
       eventsByDayByHour: [],
-      activeDay: 'saturday'
+      activeDay: 'saturday',
+      eventsOnLoad: true
     }
   },
   mounted () {
@@ -49,8 +65,12 @@ export default {
   },
   methods: {
     getEventsByDay (day) {
-      this.eventsByDayByHour = this.$store.getters['events/getByDayByHours'](day)
       this.activeDay = day
+      this.eventsOnLoad = true
+      setTimeout(() => {
+        this.eventsByDayByHour = this.$store.getters['events/getByDayByHours'](day)
+        this.eventsOnLoad = false
+      }, 300)
     }
   }
 }
