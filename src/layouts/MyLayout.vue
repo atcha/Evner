@@ -2,7 +2,7 @@
   <q-layout view="lHh Lpr lFf">
     <q-header>
       <q-toolbar>
-        <q-toolbar-title>
+        <q-toolbar-title class="text-center">
           {{ siteTitle }}
         </q-toolbar-title>
       </q-toolbar>
