@@ -52,11 +52,14 @@ module.exports = function (ctx) {
         'QBtnGroup',
         'QBtn',
         'QSeparator',
-        'QSpinner'
+        'QSpinner',
+        'QDialog',
+        'QSpace'
       ],
 
       directives: [
-        'Ripple'
+        'Ripple',
+        'ClosePopup'
       ],
 
       // Quasar plugins

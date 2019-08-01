@@ -5,6 +5,7 @@ import Vuex from 'vuex'
 import siteInfo from './siteInfo'
 import events from './events'
 import speaker from './speaker'
+import favorite from './favorite'
 
 Vue.use(Vuex)
 
@@ -14,7 +15,8 @@ export default function (/* { ssrContext } */) {
       // then we reference it
       siteInfo,
       events,
-      speaker
+      speaker,
+      favorite
     },
 
     // enable strict mode (adds overhead!)
@@ -41,6 +43,10 @@ export default function (/* { ssrContext } */) {
     module.hot.accept(['./speaker'], () => {
       const newSpeaker = require('./speaker').default
       Store.hotUpdate({ modules: { speaker: newSpeaker } })
+    })
+    module.hot.accept(['./favorite'], () => {
+      const newFavorite = require('./favorite').default
+      Store.hotUpdate({ modules: { favorite: newFavorite } })
     })
   }
 

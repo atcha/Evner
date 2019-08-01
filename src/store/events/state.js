@@ -9,7 +9,8 @@ export default {
       content: '',
       speaker: 'Equipe Poitiers collectif',
       room: 'Hall d\'accueil',
-      type: 'administratif'
+      type: 'administratif',
+      fav: false
     },
     {
       id: 2,
@@ -17,10 +18,11 @@ export default {
       hour: '14h30 - 16h30',
       title: 'Atelier A',
       resume: 'Oser s\'impliquer "dans la vie politique locale"',
-      content: '',
+      content: 'Oser s\'impliquer "dans la vie politique locale", un atelier autour du livre de Christian Proust nous expliquant les moyens possiblent pour donner l\'envie aux personnes de s\'impliquer dans la vie politique locale.',
       speaker: 'Christian Proust',
       room: 'Salle A',
-      type: 'conference'
+      type: 'conference',
+      fav: false
     },
     {
       id: 3,
@@ -31,7 +33,8 @@ export default {
       content: '',
       speaker: 'Intervenant',
       room: 'Amphy J',
-      type: 'conference'
+      type: 'conference',
+      fav: false
     },
     {
       id: 4,
@@ -42,7 +45,8 @@ export default {
       content: '',
       speaker: 'Intervenant',
       room: 'Salle A',
-      type: 'conference'
+      type: 'conference',
+      fav: false
     },
     {
       id: 5,
@@ -53,7 +57,8 @@ export default {
       content: '',
       speaker: '',
       room: 'Hall d\'accueil',
-      type: 'divertissement'
+      type: 'divertissement',
+      fav: false
     },
     {
       id: 6,
@@ -64,7 +69,8 @@ export default {
       content: '',
       speaker: 'Christian Proust',
       room: 'Amphy J',
-      type: 'atelier'
+      type: 'atelier',
+      fav: false
     }
   ]
 }

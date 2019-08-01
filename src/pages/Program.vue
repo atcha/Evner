@@ -28,18 +28,7 @@
             <q-card v-for="(eventByHour, index) in eventsByDayByHour" :key="'card-' + index" class="no-shadow">
               <q-card-section>
                 <div class="flex row items-center text-bold"><q-icon name="access_time" />{{ index }}</div>
-                <q-list v-for="event in eventByHour" :key="event.id" separator>
-                  <q-item :class="'type-' + event.type">
-                    <q-item-section>
-                      <q-item-label class="text-bold text-primary">{{ event.title }}</q-item-label>
-                      <q-item-label v-if="event.resume" caption>{{ event.resume }}</q-item-label>
-                    </q-item-section>
-                    <q-item-section side>
-                      <q-item-label class="flex row items-center" caption><q-icon name="person" class="text-secondary" />{{ event.speaker }}</q-item-label>
-                      <q-item-label class="flex row items-center" caption><q-icon name="place" class="text-secondary" />{{ event.room }}</q-item-label>
-                    </q-item-section>
-                  </q-item>
-                </q-list>
+                <Event v-for="event in eventByHour" :key="event.id" :event="event"></Event>
               </q-card-section>
             </q-card>
           </transition-group>
@@ -50,8 +39,10 @@
 </template>
 
 <script>
+import Event from '../components/Event'
 export default {
   name: 'Program',
+  components: { Event },
   data () {
     return {
       eventsByDayByHour: [],

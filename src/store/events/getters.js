@@ -9,3 +9,7 @@ export function getByDayByHours (state) {
 export function getBySpeaker (state) {
   return speaker => state.events.filter((event) => event.speaker === speaker)
 }
+
+export function getByids (state) {
+  return ids => state.events.filter((event) => event.id === ids)
+}
