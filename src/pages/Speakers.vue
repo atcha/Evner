@@ -14,7 +14,7 @@
         <q-card-section>
           <h6 class="text-subtitle2 text-secondary">En savoir plus</h6>
           <p>
-            <a :href="speaker.link">{{ speaker.link }}</a>
+            <a :href="speaker.link" target="_blank">{{ speaker.link }}</a>
           </p>
         </q-card-section>
         <q-separator />
