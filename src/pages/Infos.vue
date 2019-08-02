@@ -61,6 +61,8 @@
 </template>
 
 <script>
+import L from 'leaflet'
+import { } from 'leaflet-routing-machine'
 import { LMap, LTileLayer, LMarker } from 'vue2-leaflet'
 export default {
   name: 'Infos',
@@ -71,6 +73,18 @@ export default {
   },
   mounted () {
     this.$refs.map.mapObject._onResize()
+    let control = L.Routing.control({
+      waypoints: [
+        L.latLng(46.581390, 0.333070),
+        L.latLng(46.579300, 0.346020)
+      ],
+      router: L.Routing.mapbox('pk.eyJ1IjoiYXRjaGEiLCJhIjoiY2ptdDFyaDVhMDBsMDNwbzh0anIyNmZhdiJ9.tggpSrJwZllrBZGjXBQlNA', { profile: 'mapbox/walking' }),
+      summaryTemplate: '',
+      distanceTemplate: '',
+      timeTemplate: '',
+      show: false
+    }).addTo(this.$refs.map.mapObject)
+      control.hide()
     this.$store.commit('siteInfo/updateSiteTitle', 'Informations')
   },
   data () {
@@ -79,6 +93,7 @@ export default {
       zoom: 16,
       center: [46.58330879784864, 0.3424481012536944],
       markerFacDroit: [46.584195223376284, 0.34446363179586115],
+      markerLeLocal: [46.579300, 0.346020],
       markerEelv: [46.584227, 0.34203]
     }
   }
