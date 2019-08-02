@@ -50,9 +50,32 @@
               >
                 <l-tile-layer :url="url"></l-tile-layer>
                 <l-marker :lat-lng="markerFacDroit" ></l-marker>
-                <l-marker :lat-lng="markerEelv" ></l-marker>
+                <l-marker :lat-lng="markerLeLocal" ></l-marker>
+                <l-marker :lat-lng="markerParkingBlossac" v-if="displayParking"></l-marker>
+                <l-marker :lat-lng="markerParkingCarnot" v-if="displayParking"></l-marker>
+                <l-marker :lat-lng="markerParkingCordelier" v-if="displayParking"></l-marker>
+                <l-marker :lat-lng="markerParkingMarche" v-if="displayParking"></l-marker>
               </l-map>
+              <div class="transport-container">
+                <p class="text-subtitle1 text-secondary no-margin">Quel est votre moyen de transport ?</p>
+                <p v-for="text in transportText" :key="transport-text" class="no-margin">{{ text }}</p>
+              </div>
             </q-card-section>
+            <q-separator />
+            <q-card-action>
+              <q-btn text-color="primary"
+                     flat
+                     icon-right="train"
+                     :class="[btnClass]"
+                     @click="toggleRoute"
+              />
+              <q-btn text-color="primary"
+                     flat
+                     icon-right="directions_car"
+                     :class="[btnClass]"
+                     @click="toggleParking"
+              />
+            </q-card-action>
           </q-card>
         </div>
       </transition-group>
@@ -73,7 +96,8 @@ export default {
   },
   mounted () {
     this.$refs.map.mapObject._onResize()
-    let control = L.Routing.control({
+    this.$store.commit('siteInfo/updateSiteTitle', 'Informations')
+    this.routeControl = L.Routing.control({
       waypoints: [
         L.latLng(46.581390, 0.333070),
         L.latLng(46.579300, 0.346020)
@@ -83,9 +107,7 @@ export default {
       distanceTemplate: '',
       timeTemplate: '',
       show: false
-    }).addTo(this.$refs.map.mapObject)
-      control.hide()
-    this.$store.commit('siteInfo/updateSiteTitle', 'Informations')
+    })
   },
   data () {
     return {
@@ -94,7 +116,40 @@ export default {
       center: [46.58330879784864, 0.3424481012536944],
       markerFacDroit: [46.584195223376284, 0.34446363179586115],
       markerLeLocal: [46.579300, 0.346020],
-      markerEelv: [46.584227, 0.34203]
+      markerParkingCordelier: [46.581610, 0.342460],
+      markerParkingBlossac: [46.575394, 0.338363],
+      markerParkingCarnot: [46.579240, 0.338860],
+      markerParkingMarche: [46.584037, 0.345103],
+      routeDisplayed: false,
+      routeControl: null,
+      transportText: [],
+      displayParking: false,
+      btnClass: ''
+    }
+  },
+  methods: {
+    toggleRoute () {
+      if (!this.routeDisplayed) {
+        this.routeControl.addTo(this.$refs.map.mapObject)
+        document.querySelector('.leaflet-routing-container').style.display = 'none'
+        this.transportText.push('Votre trajet à pied depuis la gare')
+      } else {
+        this.routeControl.remove()
+        this.removeFromTransportText('Votre trajet à pied depuis la gare')
+      }
+      this.routeDisplayed = !this.routeDisplayed
+    },
+    toggleParking () {
+      if (this.displayParking) {
+        this.removeFromTransportText('Voici les parkings les plus proches')
+      } else {
+        this.transportText.push('Voici les parkings les plus proches')
+      }
+      this.displayParking = !this.displayParking
+    },
+    removeFromTransportText (text) {
+      const index = this.transportText.indexOf(text)
+      if (index > -1) this.transportText.splice(index, 1)
     }
   }
 }
@@ -109,4 +164,6 @@ export default {
           margin-top 0
   .map-container
     width 100%
+  .transport-container
+    margin-top 15px
 </style>
