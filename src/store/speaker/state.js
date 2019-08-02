@@ -3,22 +3,26 @@ export default {
     {
       picture: 'intervenants/christian-proust.jpg',
       name: 'Christian Proust',
-      bio: 'Il connait bien le monde politique local pour avoir travaillé plus de vingt ans auprès d’élus, maires et présidents de Conseil général. Après avoir été directeur général adjoint des services d’un Département, il s\'est présenté à des élections municipales puis départementales. Il est également biographe, il raconte la vie de familles et d’institutions (collectivités, associations).'
+      bio: 'Il connait bien le monde politique local pour avoir travaillé plus de vingt ans auprès d’élus, maires et présidents de Conseil général. Après avoir été directeur général adjoint des services d’un Département, il s\'est présenté à des élections municipales puis départementales. Il est également biographe, il raconte la vie de familles et d’institutions (collectivités, associations).',
+      link: 'https://www.christian-proust-citoyen.fr/'
     },
     {
       picture: 'intervenants/charles-fournier.jpg',
       name: 'Charles Fournier',
-      bio: 'Titulaire d’un Deug de géographie, d’un DUT Carrières sociales et d’un DESS Stratégie et Ingénierie de la formation pour adulte, Il travaille dans le milieu associatif (Directeur du STAJ Touraine) avant de s’engager dans l’action publique locale. Il prend en charge des services enfance et jeunesse, cohésion sociale à Vendôme puis devient directeur général adjoint à Blois. Il est aujourd’hui créateur d’une entreprise « Transitions » qui accompagne collectivités, entreprise et associations, dans la conduite de leurs transitions. Fondateur de plusieurs associations autour des questions de jeunesse, des enjeux de réappropriation de l’espace public, de l’éducation, de la démocratie…'
+      bio: 'Titulaire d’un Deug de géographie, d’un DUT Carrières sociales et d’un DESS Stratégie et Ingénierie de la formation pour adulte, Il travaille dans le milieu associatif (Directeur du STAJ Touraine) avant de s’engager dans l’action publique locale. Il prend en charge des services enfance et jeunesse, cohésion sociale à Vendôme puis devient directeur général adjoint à Blois. Il est aujourd’hui créateur d’une entreprise « Transitions » qui accompagne collectivités, entreprise et associations, dans la conduite de leurs transitions. Fondateur de plusieurs associations autour des questions de jeunesse, des enjeux de réappropriation de l’espace public, de l’éducation, de la démocratie…',
+      link: 'http://www.elus-ecologistes-regioncentre-valdeloire.fr/elus/charles-fournier/'
     },
     {
       picture: 'intervenants/charlotte-marchandise.jpg',
       name: 'Charlotte Marchandise',
-      bio: 'Engagée depuis plus de 20 ans dans le monde associatif et l’éducation populaire, avec comme fil rouge l’empowerment, je travaille en tant qu\'experte indépendante. Engagée politiquement, j\'ai mené campagne en 2017 pour un pas de coté politique citoyen. Je suis élue locale issue de la société civile depuis 2014 et à ce titre j\'ai plusieurs mandats nationaux et internationaux.'
+      bio: 'Engagée depuis plus de 20 ans dans le monde associatif et l’éducation populaire, avec comme fil rouge l’empowerment, je travaille en tant qu\'experte indépendante. Engagée politiquement, j\'ai mené campagne en 2017 pour un pas de coté politique citoyen. Je suis élue locale issue de la société civile depuis 2014 et à ce titre j\'ai plusieurs mandats nationaux et internationaux.',
+      link: 'https://charlotte-marchandise.fr/'
     },
     {
       picture: 'intervenants/a-nous-la-democratie.jpg',
       name: 'À Nous la démocratie !',
-      bio: '<strong>À nous la démocratie !</strong> est un mouvement citoyen qui travaille à construire la démocratie directe en France et en Europe.<br /><br />Créé en 2016 par 8 citoyen·ne·s qui partagent l’idée que le système politique français doit être transformé en profondeur, dans son mode de fonctionnement même, <strong>À nous la démocratie !</strong> réaffirme l’idéal qui exige que nous participions tous à l’élaboration des règles structurant la vie collective, l’ambition de redonner le pouvoir aux citoyens.'
+      bio: '<strong>À nous la démocratie !</strong> est un mouvement citoyen qui travaille à construire la démocratie directe en France et en Europe.<br /><br />Créé en 2016 par 8 citoyen·ne·s qui partagent l’idée que le système politique français doit être transformé en profondeur, dans son mode de fonctionnement même, <strong>À nous la démocratie !</strong> réaffirme l’idéal qui exige que nous participions tous à l’élaboration des règles structurant la vie collective, l’ambition de redonner le pouvoir aux citoyens.',
+      link: 'https://anouslademocratie.fr/'
     },
     {
       picture: 'intervenants/la-belle-democratie.jpg',
@@ -28,7 +32,8 @@ export default {
         '<br/>' +
         '– une générale et valable pour le temps long : <strong>“Agir pour l’appropriation citoyenne directe du pouvoir politique”</strong> ;<br/>' +
         '<br/>' +
-        '– une spécifique en vue des élections municipales de 2020 : <strong>“Déclencher le maximum de listes participatives “Label Démocratie” en vue des élections municipales de 2020.”</strong>'
+        '– une spécifique en vue des élections municipales de 2020 : <strong>“Déclencher le maximum de listes participatives “Label Démocratie” en vue des élections municipales de 2020.”</strong>',
+      link: 'http://labelledemocratie.fr/'
     },
     {
       picture: 'intervenants/tous-elus.png',
@@ -39,7 +44,8 @@ export default {
         '<br/>' +
         'Comment ? Par des méthodologies et outils innovants, Tous Elus souhaite booster leur confiance et leur donner toutes les informations techniques et les compétences pratiques pour mettre un maximum de chance de leur côté !<br/>' +
         '<br/>' +
-        'La prochaine échéance que nous visons : les élections municipales de 2020. Des milliers de nouveaux·elles élu·es locaux·les partout en France, c’est possible et urgent.'
+        'La prochaine échéance que nous visons : les élections municipales de 2020. Des milliers de nouveaux·elles élu·es locaux·les partout en France, c’est possible et urgent.',
+      link: 'https://touselus.fr/'
     },
     {
       picture: 'intervenants/des-communes-des-citoyens.png',
@@ -48,7 +54,8 @@ export default {
         '<br/>' +
         '<strong>Et si, pour être mieux représentés et écoutés, nous prenions en main notre destin, là où nous sommes ?</strong>' +
         '<br/>' +
-        'Nos expériences ont de commun la richesse de la coopération citoyenne à l\'échelon local, notre démarche est d\'espérer que cette approche se généralise, notamment à l\'occasion des élections municipales de 2020.'
+        'Nos expériences ont de commun la richesse de la coopération citoyenne à l\'échelon local, notre démarche est d\'espérer que cette approche se généralise, notamment à l\'occasion des élections municipales de 2020.',
+      link: 'https://www.descommunesetdescitoyens.fr/'
     }
   ]
 }

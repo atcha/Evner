@@ -8,8 +8,14 @@
       <q-card v-for="(speaker, index) in speakers" :key="'card-intervant-' + index" class="no-shadow">
         <img :src="'/statics/' + speaker.picture">
         <q-card-section>
-          <h6 class="text-bold text-primary">{{ speaker.name }}</h6>
+          <h6 class="text-primary">{{ speaker.name }}</h6>
           <p v-html="speaker.bio"></p>
+        </q-card-section>
+        <q-card-section>
+          <h6 class="text-subtitle2 text-secondary">En savoir plus</h6>
+          <p>
+            <a :href="speaker.link">{{ speaker.link }}</a>
+          </p>
         </q-card-section>
         <q-separator />
         <q-card-section v-if="getEventsBySpeaker(speaker.name).length > 0">
