@@ -118,7 +118,7 @@ module.exports = function (ctx) {
         theme_color: '#009aaf',
         icons: [
           {
-            'src': 'statics/icons/app-logo-128x128.png',
+            'src': 'statics/app-logo-128x128.png',
             'sizes': '128x128',
             'type': 'image/png'
           },
