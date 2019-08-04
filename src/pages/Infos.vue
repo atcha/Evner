@@ -49,12 +49,64 @@
                 :center="center"
               >
                 <l-tile-layer :url="url"></l-tile-layer>
-                <l-marker :lat-lng="markerFacDroit" ></l-marker>
-                <l-marker :lat-lng="markerLeLocal" ></l-marker>
-                <l-marker :lat-lng="markerParkingBlossac" v-if="displayParking"></l-marker>
-                <l-marker :lat-lng="markerParkingCarnot" v-if="displayParking"></l-marker>
-                <l-marker :lat-lng="markerParkingCordelier" v-if="displayParking"></l-marker>
-                <l-marker :lat-lng="markerParkingMarche" v-if="displayParking"></l-marker>
+                <l-marker :lat-lng="markerFacDroit" >
+                  <l-icon
+                    :icon-size="iconSize"
+                    :icon-anchor="staticAnchor"
+                    icon-url="/statics/markers/basic-marker.png" >
+                  </l-icon>
+                </l-marker>
+                <l-marker :lat-lng="markerLeLocal" >
+                  <l-icon
+                    :icon-size="iconSize"
+                    :icon-anchor="staticAnchor"
+                    icon-url="/statics/markers/basic-marker.png" >
+                  </l-icon>
+                </l-marker>
+                <l-marker :lat-lng="markerParkingBlossac" v-if="displayParking">
+                  <l-icon
+                    :icon-size="iconSize"
+                    :icon-anchor="staticAnchor"
+                    icon-url="/statics/markers/car-marker.png" >
+                  </l-icon>
+                  <l-popup>
+                    <h6 class="text-accent">Parking Blossac</h6>
+                    <p class="no-margin">Boulevard de Tison</p>
+                  </l-popup>
+                </l-marker>
+                <l-marker :lat-lng="markerParkingCarnot" v-if="displayParking">
+                  <l-icon
+                    :icon-size="iconSize"
+                    :icon-anchor="staticAnchor"
+                    icon-url="/statics/markers/car-marker.png" >
+                  </l-icon>
+                  <l-popup>
+                    <h6 class="text-accent">Parking Hotel de ville</h6>
+                    <p class="no-margin">22 rue Sadi Carnot</p>
+                  </l-popup>
+                </l-marker>
+                <l-marker :lat-lng="markerParkingCordelier" v-if="displayParking">
+                  <l-icon
+                    :icon-size="iconSize"
+                    :icon-anchor="staticAnchor"
+                    icon-url="/statics/markers/car-marker.png" >
+                  </l-icon>
+                  <l-popup>
+                    <h6 class="text-accent">Parking Q-Park Poitiers Les Cordeliers</h6>
+                    <p class="no-margin">4 Bis Rue Henri Oudin, 86000 Poitiers</p>
+                  </l-popup>
+                </l-marker>
+                <l-marker :lat-lng="markerParkingMarche" v-if="displayParking">
+                  <l-icon
+                    :icon-size="iconSize"
+                    :icon-anchor="staticAnchor"
+                    icon-url="/statics/markers/car-marker.png" >
+                  </l-icon>
+                  <l-popup>
+                    <h6 class="text-accent">Parking Notre-Dame-Marché</h6>
+                    <p class="no-margin">4 Voie André Malraux, 86000 Poitiers</p>
+                  </l-popup>
+                </l-marker>
               </l-map>
               <div class="transport-container">
                 <p class="text-subtitle1 text-secondary no-margin">Quel est votre moyen de transport ?</p>
@@ -69,7 +121,7 @@
                      :class="[btnClass]"
                      @click="toggleRoute"
               />
-              <q-btn text-color="primary"
+              <q-btn text-color="accent"
                      flat
                      icon-right="directions_car"
                      :class="[btnClass]"
@@ -86,13 +138,15 @@
 <script>
 import L from 'leaflet'
 import { } from 'leaflet-routing-machine'
-import { LMap, LTileLayer, LMarker } from 'vue2-leaflet'
+import { LMap, LTileLayer, LMarker, LIcon, LPopup } from 'vue2-leaflet'
 export default {
   name: 'Infos',
   components: {
     LMap,
     LTileLayer,
-    LMarker
+    LMarker,
+    LIcon,
+    LPopup
   },
   mounted () {
     this.$refs.map.mapObject._onResize()
@@ -102,11 +156,24 @@ export default {
         L.latLng(46.581390, 0.333070),
         L.latLng(46.579300, 0.346020)
       ],
+      createMarker: (i, wp) => {
+        return L.marker(wp.latLng, {
+          draggable: true,
+          icon: L.icon({
+            iconUrl: '/statics/markers/basic-marker.png',
+            iconSize: this.iconSize,
+            iconAnchor: this.staticAnchor
+          })
+        }).addTo(this.$refs.map.mapObject)
+      },
       router: L.Routing.mapbox('pk.eyJ1IjoiYXRjaGEiLCJhIjoiY2ptdDFyaDVhMDBsMDNwbzh0anIyNmZhdiJ9.tggpSrJwZllrBZGjXBQlNA', { profile: 'mapbox/walking' }),
       summaryTemplate: '',
       distanceTemplate: '',
       timeTemplate: '',
-      show: false
+      show: false,
+      lineOptions: {
+        styles: [ { color: '#009aaf', opacity: 1, weight: 3 } ]
+      }
     })
   },
   data () {
@@ -124,7 +191,9 @@ export default {
       routeControl: null,
       transportText: [],
       displayParking: false,
-      btnClass: ''
+      btnClass: '',
+      staticAnchor: [16, 37],
+      iconSize: [32, 41]
     }
   },
   methods: {
