@@ -110,11 +110,11 @@
               </l-map>
               <div class="transport-container">
                 <p class="text-subtitle1 text-secondary no-margin">Quel est votre moyen de transport ?</p>
-                <p v-for="text in transportText" :key="transport-text" class="no-margin">{{ text }}</p>
+                <p v-for="text in transportText" :key="text.id" class="no-margin">{{ text }}</p>
               </div>
             </q-card-section>
             <q-separator />
-            <q-card-action>
+            <q-card-actions>
               <q-btn text-color="secondary"
                      flat
                      icon-right="train"
@@ -127,7 +127,7 @@
                      :class="[btnClass]"
                      @click="toggleParking"
               />
-            </q-card-action>
+            </q-card-actions>
           </q-card>
         </div>
       </transition-group>

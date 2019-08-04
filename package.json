@@ -1,6 +1,6 @@
 {
   "name": "event-planet",
-  "version": "0.0.1",
+  "version": "0.9.0",
   "description": "This app is used to planify your event. Show the program etc",
   "productName": "event planer",
   "cordovaId": "org.cordova.quasar.app",
