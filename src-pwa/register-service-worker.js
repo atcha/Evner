@@ -33,6 +33,14 @@ register(process.env.SERVICE_WORKER_FILE, {
           color: 'white',
           timeout: 10000,
           handler: () => {
+            const cacheWhitelist = ['v2']
+            caches.keys().then(function (keyList) {
+              return Promise.all(keyList.map(function (key) {
+                if (cacheWhitelist.indexOf(key) === -1) {
+                  return caches.delete(key)
+                }
+              }))
+            })
             window.location.reload(true)
           }
         }
