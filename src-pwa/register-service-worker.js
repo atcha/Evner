@@ -38,7 +38,7 @@ register(process.env.SERVICE_WORKER_FILE, {
         }
       ]
     })
-    console.log('New content is downloading.')
+    console.log('New content is downloading.', registration)
   },
 
   updated (registration) {
