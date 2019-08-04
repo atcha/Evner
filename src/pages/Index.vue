@@ -14,11 +14,6 @@
         <event v-for="event in favoriteEvents" :key="event.id" :event="event" favorite=true class="bg-white"></event>
       </q-card-section>
     </q-card>
-    <q-card flat class="bg-positive text-white">
-      <q-card-section>
-        <div class="text-h6">Test</div>
-      </q-card-section>
-    </q-card>
   </q-page>
 </template>
 
