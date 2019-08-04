@@ -53,9 +53,6 @@ export default {
   .q-header
     background linear-gradient(145deg,$primary 11%,darken($primary, 20%) 75%)
 
-  .q-page
-    padding 15px 0
-
   .q-tab__label
     font-size 11px
   .q-tab__icon

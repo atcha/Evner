@@ -225,12 +225,6 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-  .main
-    padding 15px
-    div
-      &:first-of-type
-        h6
-          margin-top 0
   .map-container
     width 100%
   .transport-container

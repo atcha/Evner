@@ -1,10 +1,15 @@
 <template>
-  <q-page class="flex flex-center">
-    <div key="whois-container">
-      <div class="q-pa-md">
+  <q-page>
+    <div class="main" key="whois-container">
+      <transition-group
+        appear
+        enter-active-class="animated slideInUp"
+        leave-active-class="animated slideOutUp"
+      >
+      <div key="title-container">
         <h6 class="text-primary">Qui sommes nous ?</h6>
       </div>
-      <q-card class="no-shadow">
+      <q-card key="about-container" class="no-shadow">
         <q-card-section>
           <q-list separator>
             <q-item>
@@ -42,6 +47,7 @@
           </q-list>
         </q-card-section>
       </q-card>
+      </transition-group>
     </div>
   </q-page>
 </template>
