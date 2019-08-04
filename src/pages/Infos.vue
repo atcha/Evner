@@ -178,7 +178,7 @@ export default {
   },
   data () {
     return {
-      url: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png',
+      url: 'https://{s}.tile.osm.org/{z}/{x}/{y}.png',
       zoom: 16,
       center: [46.58330879784864, 0.3424481012536944],
       markerFacDroit: [46.584195223376284, 0.34446363179586115],
