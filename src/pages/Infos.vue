@@ -115,7 +115,7 @@
             </q-card-section>
             <q-separator />
             <q-card-action>
-              <q-btn text-color="primary"
+              <q-btn text-color="secondary"
                      flat
                      icon-right="train"
                      :class="[btnClass]"
@@ -172,7 +172,7 @@ export default {
       timeTemplate: '',
       show: false,
       lineOptions: {
-        styles: [ { color: '#009aaf', opacity: 1, weight: 3 } ]
+        styles: [ { color: '#bdb01d', opacity: 1, weight: 3 } ]
       }
     })
   },

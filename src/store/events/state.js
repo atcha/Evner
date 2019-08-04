@@ -2,7 +2,7 @@ export default {
   events: [
     {
       id: 1,
-      day: 'saturday',
+      day: 'samedi',
       hour: '13h30 - 14h',
       title: 'Accueil des participants',
       resume: '',
@@ -14,7 +14,7 @@ export default {
     },
     {
       id: 2,
-      day: 'saturday',
+      day: 'samedi',
       hour: '14h - 15h',
       title: 'Plénière d\'accueil',
       resume: 'Introduction de Poitiers Collectif, de Christian Proust et Charles Fournier',
@@ -26,7 +26,7 @@ export default {
     },
     {
       id: 3,
-      day: 'saturday',
+      day: 'samedi',
       hour: '15h10 - 16h40',
       title: 'Atelier A',
       resume: 'Courte explication de l\'atelier',
@@ -38,7 +38,7 @@ export default {
     },
     {
       id: 4,
-      day: 'saturday',
+      day: 'samedi',
       hour: '15h10 - 16h40',
       title: 'Atelier B',
       resume: 'Courte explication de l\'atelier',
@@ -50,7 +50,7 @@ export default {
     },
     {
       id: 5,
-      day: 'saturday',
+      day: 'samedi',
       hour: '16h50 - 18h30',
       title: 'Conférence',
       resume: 'Courte explication de la conférence',
@@ -62,8 +62,8 @@ export default {
     },
     {
       id: 6,
-      day: 'saturday',
-      hour: '19h - 19h30',
+      day: 'samedi',
+      hour: '19h00 - 19h30',
       title: 'Action publique',
       resume: 'Courte explication de l\'action',
       content: 'On part sur la place publique faire entendre notre voix !',
@@ -74,8 +74,8 @@ export default {
     },
     {
       id: 7,
-      day: 'saturday',
-      hour: '20h - 23h',
+      day: 'samedi',
+      hour: '20h00 - 23h00',
       title: 'La disco soupe !',
       resume: 'Et si on faisait une soupe collective ? Et en musique, s\'il vous plait',
       content: '',
@@ -86,7 +86,7 @@ export default {
     },
     {
       id: 8,
-      day: 'sunday',
+      day: 'dimanche',
       hour: '9h30 - 10h00',
       title: 'Petit déjeuner d\'accueil',
       resume: 'On s\'y remet en douceur',
@@ -98,7 +98,7 @@ export default {
     },
     {
       id: 9,
-      day: 'sunday',
+      day: 'dimanche',
       hour: '10h00 - 12h30',
       title: 'Speed Dating des initiatives',
       resume: 'Vous avez des interrogations ? Il vous manque des informations ? On se donne tous des solutions',
@@ -110,7 +110,7 @@ export default {
     },
     {
       id: 10,
-      day: 'sunday',
+      day: 'dimanche',
       hour: '10h00 - 12h30',
       title: 'Speed Dating des initiatives',
       resume: 'Vous avez des interrogations ? Il vous manque des informations ? On se donne tous des solutions',
@@ -122,7 +122,7 @@ export default {
     },
     {
       id: 11,
-      day: 'sunday',
+      day: 'dimanche',
       hour: '14h00 - 16h00',
       title: 'Table ronde des intervenants',
       resume: 'Les petites astuces, les derniers conseils.',

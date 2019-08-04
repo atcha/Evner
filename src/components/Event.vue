@@ -3,7 +3,7 @@
     <q-list separator>
       <q-item :class="'type-' + event.type">
         <q-item-section>
-          <q-item-label class="text-bold text-primary">{{ event.title }} <q-space/> <span class="text-black text-body2">{{ event.hour }}</span></q-item-label>
+          <q-item-label class="text-bold text-primary">{{ event.title }} <q-space/> <span v-if="event.day || event.hour" class="text-black dayhour-container">{{ event.day }} - {{ event.hour }}</span></q-item-label>
           <q-item-label v-if="event.resume" caption>{{ event.resume }}</q-item-label>
           <q-btn v-if="event.content.length > 0"
                  class="q-btn-detail"
@@ -15,10 +15,10 @@
                  @click="isDetailOpen = !isDetailOpen" />
         </q-item-section>
         <q-item-section side>
-          <q-item-label class="flex row items-center" caption>
+          <q-item-label v-if="event.speaker" class="flex row items-center" caption>
             <q-icon name="person" class="text-secondary" />{{ event.speaker }}
           </q-item-label>
-          <q-item-label class="flex row items-center" caption>
+          <q-item-label v-if="event.room" class="flex row items-center" caption>
             <q-icon name="place" class="text-secondary" />{{ event.room }}
           </q-item-label>
           <q-item-label v-if="!favorite" class="flex row items-center" caption>
@@ -38,9 +38,7 @@
           <q-space />
           <q-btn icon="close" text-color="primary" flat dense v-close-popup />
         </q-card-section>
-
-        <q-card-section>
-          {{ event.content }}
+        <q-card-section v-html="event.content">
         </q-card-section>
       </q-card>
     </q-dialog>
@@ -91,4 +89,6 @@ export default {
 <style lang="stylus" scoped>
   .q-icon
     margin-right 5px
+  .dayhour-container
+    font-size .7rem
 </style>

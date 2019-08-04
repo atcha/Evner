@@ -8,8 +8,8 @@
       >
         <div class="q-pa-md" key="btn-days">
           <q-btn-group unelevated spread>
-            <q-btn label="Samedi" color="accent" :class="{ 'is-active': (activeDay === 'saturday') }" @click="getEventsByDay('saturday')" />
-            <q-btn label="Dimanche" color="accent" :class="{ 'is-active': (activeDay === 'sunday') }" @click="getEventsByDay('sunday')" />
+            <q-btn label="Samedi" color="accent" :class="{ 'is-active': (activeDay === 'samedi') }" @click="getEventsByDay('samedi')" />
+            <q-btn label="Dimanche" color="accent" :class="{ 'is-active': (activeDay === 'dimanche') }" @click="getEventsByDay('dimanche')" />
           </q-btn-group>
         </div>
         <div key="events-container" class="events-container">
@@ -51,7 +51,7 @@ export default {
     }
   },
   mounted () {
-    this.getEventsByDay('saturday')
+    this.getEventsByDay('samedi')
     this.$store.commit('siteInfo/updateSiteTitle', 'Planning')
   },
   methods: {
