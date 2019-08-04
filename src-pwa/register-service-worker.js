@@ -31,6 +31,7 @@ register(process.env.SERVICE_WORKER_FILE, {
         {
           label: 'Mettre à jour',
           color: 'white',
+          timeout: 10000,
           handler: () => {
             window.location.reload(true)
           }
