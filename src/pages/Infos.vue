@@ -150,6 +150,7 @@ export default {
   },
   mounted () {
     this.$refs.map.mapObject._onResize()
+    L.tileLayer(this.url, { useCache: true })
     this.$store.commit('siteInfo/updateSiteTitle', 'Informations')
     this.routeControl = L.Routing.control({
       waypoints: [

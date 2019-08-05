@@ -3933,6 +3933,11 @@ leaflet-routing-machine@^3.2.12:
     "@mapbox/polyline" "^0.2.0"
     osrm-text-instructions "^0.13.2"
 
+leaflet.tilelayer.pouchdbcached@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/leaflet.tilelayer.pouchdbcached/-/leaflet.tilelayer.pouchdbcached-1.0.0.tgz#2ff4e77ad2def7e081c8808e914bb79c47ea608c"
+  integrity sha512-fP40UtRooKxbIdFm8W1abKSTJBgedb1nU7n0kFk4wPSxReRRoPu9XemVqPsaiPvbClNyXGb3YXLe0IvBBtLmBQ==
+
 leaflet@^1.5.1:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/leaflet/-/leaflet-1.5.1.tgz#9afb9d963d66c870066b1342e7a06f92840f46bf"
