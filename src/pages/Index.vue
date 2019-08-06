@@ -7,7 +7,9 @@
     >
       <q-card flat key="logo-container">
         <q-card-section>
-          <img src="/statics/logo-rentree.jpg">
+          <div class="logo-container">
+            <img src="/statics/logo-rentree.jpg">
+          </div>
           <p class="text-subtitle1 text-grey-10">
             La Rentrée citoyenne approche. L'application va vous permettre de préparer l'événement.
           </p>
@@ -28,9 +30,14 @@
 
 <style lang="stylus" scoped>
   .q-card
-    img
-      max-width 100%
-      height auto
+    .logo-container
+      text-align center
+      img
+        max-width 100%
+        height auto
+
+        @media screen and (min-width $breakpoint-md-min)
+          display none
 </style>
 
 <script>
