@@ -152,30 +152,7 @@ export default {
     this.$refs.map.mapObject._onResize()
     L.tileLayer(this.url, { useCache: true })
     this.$store.commit('siteInfo/updateSiteTitle', 'Informations')
-    this.routeControl = L.Routing.control({
-      waypoints: [
-        L.latLng(46.581390, 0.333070),
-        L.latLng(46.579300, 0.346020)
-      ],
-      createMarker: (i, wp) => {
-        return L.marker(wp.latLng, {
-          draggable: true,
-          icon: L.icon({
-            iconUrl: '/statics/markers/basic-marker.png',
-            iconSize: this.iconSize,
-            iconAnchor: this.staticAnchor
-          })
-        }).addTo(this.$refs.map.mapObject)
-      },
-      router: L.Routing.mapbox('pk.eyJ1IjoiYXRjaGEiLCJhIjoiY2ptdDFyaDVhMDBsMDNwbzh0anIyNmZhdiJ9.tggpSrJwZllrBZGjXBQlNA', { profile: 'mapbox/walking' }),
-      summaryTemplate: '',
-      distanceTemplate: '',
-      timeTemplate: '',
-      show: false,
-      lineOptions: {
-        styles: [ { color: '#bdb01d', opacity: 1, weight: 3 } ]
-      }
-    })
+    this.getRoute()
   },
   data () {
     return {
@@ -220,6 +197,32 @@ export default {
     removeFromTransportText (text) {
       const index = this.transportText.indexOf(text)
       if (index > -1) this.transportText.splice(index, 1)
+    },
+    getRoute () {
+      this.routeControl = L.Routing.control({
+        waypoints: [
+          L.latLng(46.581390, 0.333070),
+          L.latLng(46.579300, 0.346020)
+        ],
+        createMarker: (i, wp) => {
+          return L.marker(wp.latLng, {
+            draggable: true,
+            icon: L.icon({
+              iconUrl: '/statics/markers/basic-marker.png',
+              iconSize: this.iconSize,
+              iconAnchor: this.staticAnchor
+            })
+          }).addTo(this.$refs.map.mapObject)
+        },
+        router: L.Routing.mapbox('pk.eyJ1IjoiYXRjaGEiLCJhIjoiY2ptdDFyaDVhMDBsMDNwbzh0anIyNmZhdiJ9.tggpSrJwZllrBZGjXBQlNA', { profile: 'mapbox/walking' }),
+        summaryTemplate: '',
+        distanceTemplate: '',
+        timeTemplate: '',
+        show: false,
+        lineOptions: {
+          styles: [ { color: '#bdb01d', opacity: 1, weight: 3 } ]
+        }
+      })
     }
   }
 }

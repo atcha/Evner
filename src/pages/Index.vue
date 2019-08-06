@@ -1,10 +1,13 @@
 <template>
   <q-page>
-    <div class="q-pa-md">
-      <p class="text-subtitle1 text-grey-10">
-        La Rentrée citoyenne approche. L'application va vous permettre de préparer l'événement.
-      </p>
-    </div>
+    <q-card flat>
+      <q-card-section>
+        <img src="/statics/logo-rentree.png">
+        <p class="text-subtitle1 text-grey-10">
+          La Rentrée citoyenne approche. L'application va vous permettre de préparer l'événement.
+        </p>
+      </q-card-section>
+    </q-card>
     <q-card flat class="bg-positive text-white">
       <q-card-section>
         <div class="text-h6">Vos favoris</div>
@@ -17,7 +20,11 @@
   </q-page>
 </template>
 
-<style>
+<style lang="stylus" scoped>
+  .q-card
+    img
+      max-width 100%
+      height auto
 </style>
 
 <script>
