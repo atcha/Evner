@@ -102,7 +102,26 @@ module.exports = function (ctx) {
     // animations: [],
 
     ssr: {
-      pwa: false
+      pwa: {
+        runtimeCaching: [
+          {
+            urlPattern: '/infos',
+            handler: 'cacheFirst'
+          },
+          {
+            urlPattern: '/program',
+            handler: 'cacheFirst'
+          },
+          {
+            urlPattern: '/speakers',
+            handler: 'cacheFirst'
+          },
+          {
+            urlPattern: '/about',
+            handler: 'cacheFirst'
+          }
+        ]
+      }
     },
 
     pwa: {
