@@ -2,7 +2,7 @@
   <q-page>
     <q-card flat>
       <q-card-section>
-        <img src="/statics/logo-rentree.png">
+        <img src="/statics/logo-rentree.jpg">
         <p class="text-subtitle1 text-grey-10">
           La Rentrée citoyenne approche. L'application va vous permettre de préparer l'événement.
         </p>
