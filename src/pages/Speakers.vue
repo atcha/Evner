@@ -6,7 +6,17 @@
       leave-active-class="animated slideOutUp"
     >
       <q-card v-for="(speaker, index) in speakers" :key="'card-intervant-' + index" class="no-shadow">
-        <img :src="'/statics/' + speaker.picture">
+        <q-img
+          :src="'/statics/' + speaker.picture"
+          transition="flip-down"
+          spinner-color="white"
+        >
+          <template v-slot:error>
+            <div class="absolute-full flex flex-center bg-negative text-white">
+              Impossible de charger l'image
+            </div>
+          </template>
+        </q-img>
         <q-card-section>
           <h6 class="text-primary">{{ speaker.name }}</h6>
           <p v-html="speaker.bio"></p>

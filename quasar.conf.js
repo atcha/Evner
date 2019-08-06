@@ -57,7 +57,8 @@ module.exports = function (ctx) {
         'QSeparator',
         'QSpinner',
         'QDialog',
-        'QSpace'
+        'QSpace',
+        'QImg'
       ],
 
       directives: [
