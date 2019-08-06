@@ -1,22 +1,28 @@
 <template>
   <q-page>
-    <q-card flat>
-      <q-card-section>
-        <img src="/statics/logo-rentree.jpg">
-        <p class="text-subtitle1 text-grey-10">
-          La Rentrée citoyenne approche. L'application va vous permettre de préparer l'événement.
-        </p>
-      </q-card-section>
-    </q-card>
-    <q-card flat class="bg-positive text-white">
-      <q-card-section>
-        <div class="text-h6">Vos favoris</div>
-        <div class="text-subtitle2">Les favoris permettent de vous prévenir quand une intervention commence</div>
-      </q-card-section>
-      <q-card-section>
-        <event v-for="event in favoriteEvents" :key="event.id" :event="event" favorite=true class="bg-white"></event>
-      </q-card-section>
-    </q-card>
+    <transition-group
+      appear
+      enter-active-class="animated fadeIn"
+      leave-active-class="animated fadeOut"
+    >
+      <q-card flat key="logo-container">
+        <q-card-section>
+          <img src="/statics/logo-rentree.jpg">
+          <p class="text-subtitle1 text-grey-10">
+            La Rentrée citoyenne approche. L'application va vous permettre de préparer l'événement.
+          </p>
+        </q-card-section>
+      </q-card>
+      <q-card flat class="bg-positive text-white" key="infos-container">
+        <q-card-section>
+          <div class="text-h6">Vos favoris</div>
+          <div class="text-subtitle2">Les favoris permettent de vous prévenir quand une intervention commence</div>
+        </q-card-section>
+        <q-card-section>
+          <event v-for="event in favoriteEvents" :key="event.id" :event="event" favorite=true class="bg-white"></event>
+        </q-card-section>
+      </q-card>
+    </transition-group>
   </q-page>
 </template>
 
