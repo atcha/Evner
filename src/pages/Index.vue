@@ -1,5 +1,5 @@
 <template>
-  <q-page>
+  <q-page v-touch-swipe.left.right="swipePage">
     <transition-group
       appear
       enter-active-class="animated fadeIn"
@@ -59,6 +59,13 @@ export default {
     getFavoritesEvents () {
       this.favorites = this.$store.state.favorite.favorites
       this.favoriteEvents = this.$store.getters['events/getByids'](this.favorites)
+    },
+    swipePage ({ evt, ...info }) {
+      if (info.direction === 'left') {
+        this.$router.push('infos')
+      } else if (info.direction === 'right') {
+        this.$router.push('about')
+      }
     }
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <q-page>
+  <q-page v-touch-swipe.left.right="swipePage">
     <div class="main" key="whois-container">
       <transition-group
         appear
@@ -57,6 +57,15 @@ export default {
   name: 'About',
   mounted () {
     this.$store.commit('siteInfo/updateSiteTitle', 'A propos')
+  },
+  methods: {
+    swipePage ({ evt, ...info }) {
+      if (info.direction === 'left') {
+        this.$router.push('/')
+      } else if (info.direction === 'right') {
+        this.$router.push('speakers')
+      }
+    }
   }
 }
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <q-page>
+  <q-page v-touch-swipe.left.right="swipePage">
     <transition-group
       appear
       enter-active-class="animated slideInUp"
@@ -64,6 +64,13 @@ export default {
   methods: {
     getEventsBySpeaker (speakerName) {
       return this.$store.getters['events/getBySpeaker'](speakerName)
+    },
+    swipePage ({ evt, ...info }) {
+      if (info.direction === 'left') {
+        this.$router.push('about')
+      } else if (info.direction === 'right') {
+        this.$router.push('program')
+      }
     }
   }
 }
