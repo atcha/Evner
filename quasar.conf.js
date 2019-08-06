@@ -3,6 +3,7 @@
 
 module.exports = function (ctx) {
   return {
+    preFetch: true,
     // app boot file (/src/boot)
     // --> boot files are part of "main.js"
     boot: [
@@ -38,6 +39,7 @@ module.exports = function (ctx) {
         'QPage',
         'QToolbar',
         'QToolbarTitle',
+        'QAvatar',
         'QBtn',
         'QIcon',
         'QList',
@@ -55,7 +57,8 @@ module.exports = function (ctx) {
         'QSeparator',
         'QSpinner',
         'QDialog',
-        'QSpace'
+        'QSpace',
+        'QImg'
       ],
 
       directives: [
@@ -131,6 +134,7 @@ module.exports = function (ctx) {
         clientsClaim: true
       }, // only for NON InjectManifest
       manifest: {
+        start_url: '/',
         name: 'La Rentrée des Initiatives Citoyennes',
         short_name: 'La Rentrée',
         description: 'Retrouvez toutes les informations pratique sur l\'événement',
@@ -168,7 +172,7 @@ module.exports = function (ctx) {
       },
       metaVariables: {
         appleMobileWebAppCapable: 'yes',
-        appleMobileWebAppStatusBarStyle: 'black-translucent',
+        appleMobileWebAppStatusBarStyle: 'default',
         appleTouchIcon120: 'statics/icons/apple-ric-icon-120x120.png',
         appleTouchIcon180: 'statics/icons/apple-ric-icon-180x180.png',
         appleTouchIcon152: 'statics/icons/apple-ric-icon-152x152.png',

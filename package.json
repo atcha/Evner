@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@quasar/extras": "^1.0.0",
+    "flatted": "^2.0.1",
     "leaflet": "^1.5.1",
     "leaflet-routing-machine": "^3.2.12",
     "leaflet.tilelayer.pouchdbcached": "^1.0.0",
