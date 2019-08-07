@@ -18,7 +18,9 @@
     </q-page-container>
 
     <q-footer elevated class="bg-white text-grey-8">
-      <q-tabs>
+      <q-tabs
+        switch-indicator
+      >
         <q-route-tab name="Accueil" icon="home" label="Accueil" to="/" />
         <q-route-tab name="Infos pratiques" icon="place" label="Infos pratiques" to="/infos" />
         <q-route-tab name="Programme" icon="calendar_view_day" label="Programme" to="/program" />
