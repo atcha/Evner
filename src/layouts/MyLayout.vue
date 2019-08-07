@@ -81,6 +81,9 @@ export default {
   .q-tab__icon
     font-size 16px
 
-  .q-tab--active
-    color $primary !important
+  .q-footer
+    .q-tab__content
+      padding-bottom 15px
+    .q-tab--active
+      color $primary !important
 </style>
