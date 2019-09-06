@@ -1,5 +1,5 @@
 <template>
-  <q-page v-touch-swipe.left.right="swipePage">
+  <q-page>
     <transition-group
       appear
       enter-active-class="animated fadeIn"

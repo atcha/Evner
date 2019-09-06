@@ -1,5 +1,5 @@
 <template>
-  <q-page v-touch-swipe.left.right="swipePage">
+  <q-page>
     <div class="main" key="whois-container">
       <transition-group
         appear
