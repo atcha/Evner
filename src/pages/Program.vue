@@ -74,14 +74,16 @@ export default {
     margin-right 5px
 
   .q-btn__container--fixed
-    position fixed
-    top 50px
-    z-index 50
-    width 100%
+    @media screen and (max-width: 900px)
+      position fixed
+      top 50px
+      z-index 50
+      width 100%
   .q-btn
     &.is-active
       background-color darken($accent, 10) !important
 
   .events-container
-    padding-top 68px
+    @media screen and (max-width: 900px)
+      padding-top 68px
 </style>
