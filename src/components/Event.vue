@@ -65,14 +65,16 @@ export default {
         this.$store.commit('favorite/addEventToFavorite', this.event.id)
         this.$q.notify({
           message: 'L\'intervention a bien été ajoutée à vos favoris',
-          color: 'primary'
+          color: 'accent',
+          position: 'top'
         })
         this.favIcon = 'favorite'
       } else {
         this.$store.commit('favorite/removeEventToFavorite', this.event.id)
         this.$q.notify({
           message: 'L\'intervention a bien été supprimée de vos favoris',
-          color: 'primary'
+          color: 'accent',
+          position: 'top'
         })
         this.favIcon = 'favorite_border'
       }

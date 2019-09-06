@@ -8,7 +8,17 @@
       <q-card flat key="logo-container">
         <q-card-section>
           <div class="logo-container">
-            <img src="/statics/logo-rentree.jpg">
+            <q-img
+              src="/statics/logo-rentree.jpg"
+              transition="fade"
+              spinner-color="white"
+            >
+              <template v-slot:error>
+                <div class="absolute-full flex flex-center bg-negative text-white">
+                  Impossible de charger l'image
+                </div>
+              </template>
+            </q-img>
           </div>
           <p class="text-subtitle1 text-grey-10">
             La Rentrée citoyenne approche. L'application va vous permettre de préparer l'événement.

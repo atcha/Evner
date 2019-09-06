@@ -1,6 +1,12 @@
 # event planer (event-planet)
 
-This app is used to planify your event. Show the program etc
+This app is used to planify your event. Show the program etc.
+It's dev based on Quasar.
+Currently all datas are stored in front. 
+Futur features :
+- Back Office to configure all the event (speakers, places, events, infos etc)
+- User part to save users favorites 
+
 
 ## Install the dependencies
 ```bash
