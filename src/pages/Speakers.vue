@@ -80,6 +80,10 @@ export default {
   .q-card:not(:first-child)
     margin-top 15px
 
+  .q-card__section
+    p
+      text-align justify
+
   .q-icon
     margin-right 5px
 </style>

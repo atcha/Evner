@@ -15,11 +15,11 @@
                  @click="isDetailOpen = !isDetailOpen" />
         </q-item-section>
         <q-item-section side>
-          <q-item-label v-if="event.speaker" class="flex row items-center" caption>
-            <q-icon name="person" class="text-secondary" />{{ event.speaker }}
+          <q-item-label v-for="(speaker, index) in event.speaker" :key="index" class="flex row items-center" caption>
+            <span >{{ speaker }}</span> <q-icon name="person" class="text-secondary" />
           </q-item-label>
           <q-item-label v-if="event.room" class="flex row items-center" caption>
-            <q-icon name="place" class="text-secondary" />{{ event.room }}
+            {{ event.room }} <q-icon name="place" class="text-secondary" />
           </q-item-label>
           <q-item-label v-if="!favorite" class="flex row items-center" caption>
             <q-icon :name="favIcon"
