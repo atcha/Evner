@@ -19,11 +19,11 @@
 
     <q-footer elevated class="bg-white text-grey-8">
       <q-tabs>
-        <q-route-tab name="Accueil" icon="home" label="Accueil" to="/" />
-        <q-route-tab name="Infos pratiques" icon="place" label="Infos pratiques" to="/infos" />
-        <q-route-tab name="Programme" icon="calendar_view_day" label="Programme" to="/program" />
-        <q-route-tab name="Intervenants" icon="people" label="Intervenants" to="/speakers" />
-        <q-route-tab name="A propos" icon="info" label="A propos" to="about" />
+        <q-route-tab name="Accueil" icon="home" to="/" />
+        <q-route-tab name="Infos pratiques" icon="place" to="/infos" />
+        <q-route-tab name="Programme" icon="calendar_view_day" to="/program" />
+        <q-route-tab name="Intervenants" icon="people" to="/speakers" />
+        <q-route-tab name="A propos" icon="info" to="about" />
       </q-tabs>
     </q-footer>
   </q-layout>
