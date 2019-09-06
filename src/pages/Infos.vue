@@ -302,13 +302,6 @@ export default {
           styles: [ { color: '#bdb01d', opacity: 1, weight: 3 } ]
         }
       })
-    },
-    swipePage ({ evt, ...info }) {
-      if (info.direction === 'left') {
-        this.$router.push('program')
-      } else if (info.direction === 'right') {
-        this.$router.push('/')
-      }
     }
   }
 }

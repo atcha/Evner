@@ -64,13 +64,6 @@ export default {
   methods: {
     getEventsBySpeaker (speakerName) {
       return this.$store.getters['events/getBySpeaker'](speakerName)
-    },
-    swipePage ({ evt, ...info }) {
-      if (info.direction === 'left') {
-        this.$router.push('about')
-      } else if (info.direction === 'right') {
-        this.$router.push('program')
-      }
     }
   }
 }

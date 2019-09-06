@@ -62,13 +62,6 @@ export default {
         this.eventsByDayByHour = this.$store.getters['events/getByDayByHours'](day)
         this.eventsOnLoad = false
       }, 300)
-    },
-    swipePage ({ evt, ...info }) {
-      if (info.direction === 'left') {
-        this.$router.push('speakers')
-      } else if (info.direction === 'right') {
-        this.$router.push('infos')
-      }
     }
   }
 }
