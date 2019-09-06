@@ -93,4 +93,7 @@ export default {
     margin-right 5px
   .dayhour-container
     font-size .7rem
+
+  [class*="type-"]
+    align-items flex-start
 </style>
