@@ -47,6 +47,22 @@
           </q-list>
         </q-card-section>
       </q-card>
+      <div key="title-container">
+        <h6 class="text-primary">L'application</h6>
+      </div>
+      <q-card key="about-container" class="no-shadow">
+        <q-card-section>
+          <q-list separator>
+            <q-item>
+              <q-item-section>
+                <q-item-label>
+                  <p>Application réalisée grâce à <a href="https://quasar.dev/" target="_blank">Quasar</a> par <a href="https://twitter.com/AtChA_" target="_blank">AtChA</a>.</p>
+                </q-item-label>
+              </q-item-section>
+            </q-item>
+          </q-list>
+        </q-card-section>
+      </q-card>
       </transition-group>
     </div>
   </q-page>
