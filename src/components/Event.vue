@@ -16,10 +16,10 @@
         </q-item-section>
         <q-item-section side>
           <q-item-label v-for="(speaker, index) in event.speaker" :key="index" class="flex row items-center" caption>
-            <span >{{ speaker }}</span> <q-icon name="person" class="text-secondary" />
+            <q-icon name="person" class="text-secondary" /> <span >{{ speaker }}</span>
           </q-item-label>
           <q-item-label v-if="event.room" class="flex row items-center" caption>
-            {{ event.room }} <q-icon name="place" class="text-secondary" />
+            <q-icon name="place" class="text-secondary" /> {{ event.room }}
           </q-item-label>
           <q-item-label v-if="!favorite" class="flex row items-center" caption>
             <q-icon :name="favIcon"
