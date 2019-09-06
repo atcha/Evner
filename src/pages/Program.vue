@@ -6,7 +6,7 @@
         enter-active-class="animated slideInUp"
         leave-active-class="animated slideOutUp"
       >
-        <div class="q-pa-md" key="btn-days">
+        <div class="q-pa-md q-btn__container--fixed" key="btn-days">
           <q-btn-group unelevated spread>
             <q-btn label="Samedi" color="accent" :class="{ 'is-active': (activeDay === 'samedi') }" @click="getEventsByDay('samedi')" />
             <q-btn label="Dimanche" color="accent" :class="{ 'is-active': (activeDay === 'dimanche') }" @click="getEventsByDay('dimanche')" />
@@ -80,7 +80,15 @@ export default {
   .q-icon
     margin-right 5px
 
+  .q-btn__container--fixed
+    position fixed
+    top 50px
+    z-index 50
+    width 100%
   .q-btn
     &.is-active
       background-color darken($accent, 10) !important
+
+  .events-container
+    padding-top 68px
 </style>

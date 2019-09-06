@@ -36,9 +36,9 @@
         <q-card-section class="row items-center">
           <div class="text-h6 text-primary">{{ event.title }}</div>
           <q-space />
-          <q-btn icon="close" text-color="primary" flat dense v-close-popup />
+          <q-btn icon="close" text-color="primary" class="q-btn--close" flat dense v-close-popup />
         </q-card-section>
-        <q-card-section v-html="event.content">
+        <q-card-section class="text-justify" v-html="event.content">
         </q-card-section>
       </q-card>
     </q-dialog>

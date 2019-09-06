@@ -6,6 +6,31 @@
         enter-active-class="animated slideInUp"
         leave-active-class="animated slideOutUp"
       >
+        <div key="inscription-container">
+          <h6 class="text-primary">Toujours pas inscrit ?</h6>
+          <q-card class="no-shadow">
+            <q-card-section>
+              <q-list separator>
+                <q-item>
+                  <q-item-section>
+                    <q-item-label class="text-bold">Vous avez jusqu'au 15/09</q-item-label>
+                    <q-item-label>
+                      <q-btn icon="create"
+                             label="M'inscrire à l'évènement"
+                             unelevated
+                             color="accent"
+                             class="full-width"
+                             type="a"
+                             href="https://framaforms.org/formulaire-dinscription-a-la-rentree-des-initiatives-citoyennes-poitiers-2122-septembre-2019"
+                             target="_blank"
+                             replace />
+                    </q-item-label>
+                  </q-item-section>
+                </q-item>
+              </q-list>
+            </q-card-section>
+          </q-card>
+        </div>
         <div key="path-container">
           <h6 class="text-primary">Comment nous rejoindre ?</h6>
           <q-card class="no-shadow">
@@ -15,7 +40,10 @@
                   <q-item-section>
                     <q-item-label class="text-bold">Adresse</q-item-label>
                     <q-item-label caption>
-                      15-13 Rue Sainte-Opportune, 86000 Poitiers
+                      <strong>Université de Poitiers - centre-ville</strong><br />
+                      Faculté de droit et sciences sociales<br />
+                      Batiment E10<br />
+                      15 rue sainte-opportune<br />
                     </q-item-label>
                   </q-item-section>
                 </q-item>
@@ -27,8 +55,25 @@
                              label="trouvez votre itinéraire"
                              unelevated
                              color="accent"
+                             class="full-width"
                              type="a"
                              href="https://www.vitalis-poitiers.fr/itineraires/"
+                             target="_blank"
+                             replace />
+                    </q-item-label>
+                  </q-item-section>
+                </q-item>
+                <q-item>
+                  <q-item-section>
+                    <q-item-label class="text-bold">Vous cherchez un co-voiturage ?</q-item-label>
+                    <q-item-label caption>
+                      <q-btn icon="directions_car"
+                             label="Trouver un co-voiturage"
+                             unelevated
+                             color="accent"
+                             class="full-width"
+                             type="a"
+                             href="https://www.covievent.org/covoiturage/rentree-des-initiatives-citoyennes-municipales-2020/f3262b14700873f0eeaf3c1f48c87f44"
                              target="_blank"
                              replace />
                     </q-item-label>
@@ -55,13 +100,22 @@
                     :icon-anchor="staticAnchor"
                     icon-url="/statics/markers/basic-marker.png" >
                   </l-icon>
+                  <l-popup>
+                    <h6 class="text-accent">Faculté de droit et sciences sociales</h6>
+                    <p class="no-margin">15 rue sainte-opportune</p>
+                    <p class="no-margin">La Rentrée des initiatives Citoyennes c'est ici !</p>
+                  </l-popup>
                 </l-marker>
-                <l-marker :lat-lng="markerLeLocal" >
+                <l-marker :lat-lng="markerHotelDeVille" >
                   <l-icon
                     :icon-size="iconSize"
                     :icon-anchor="staticAnchor"
                     icon-url="/statics/markers/basic-marker.png" >
                   </l-icon>
+                  <l-popup>
+                    <h6 class="text-accent">Place du Maréchal Philippe Leclerc</h6>
+                    <p class="no-margin">Lieu de l'action publique</p>
+                  </l-popup>
                 </l-marker>
                 <l-marker :lat-lng="markerParkingBlossac" v-if="displayParking">
                   <l-icon
@@ -130,6 +184,31 @@
             </q-card-actions>
           </q-card>
         </div>
+        <div key="infospratiques-container">
+          <h6 class="text-primary">Les repas</h6>
+          <q-card class="no-shadow">
+            <q-card-section>
+              <q-list separator>
+                <q-item>
+                  <q-item-section>
+                    <q-item-label class="text-bold">Que prenons-nous en charge</q-item-label>
+                    <q-item-label caption>
+                      Café - Thé - Jus de fruit - Apéritif
+                    </q-item-label>
+                  </q-item-section>
+                </q-item>
+                <q-item>
+                  <q-item-section>
+                    <q-item-label class="text-bold">Votre participation</q-item-label>
+                    <q-item-label caption>
+                      10 € par repas
+                    </q-item-label>
+                  </q-item-section>
+                </q-item>
+              </q-list>
+            </q-card-section>
+          </q-card>
+        </div>
       </transition-group>
     </div>
   </q-page>
@@ -157,10 +236,10 @@ export default {
   data () {
     return {
       url: 'https://{s}.tile.osm.org/{z}/{x}/{y}.png',
-      zoom: 16,
+      zoom: 15,
       center: [46.58330879784864, 0.3424481012536944],
       markerFacDroit: [46.584195223376284, 0.34446363179586115],
-      markerLeLocal: [46.579300, 0.346020],
+      markerHotelDeVille: [46.5805, 0.33969999999999345],
       markerParkingCordelier: [46.581610, 0.342460],
       markerParkingBlossac: [46.575394, 0.338363],
       markerParkingCarnot: [46.579240, 0.338860],
@@ -202,11 +281,11 @@ export default {
       this.routeControl = L.Routing.control({
         waypoints: [
           L.latLng(46.581390, 0.333070),
-          L.latLng(46.579300, 0.346020)
+          L.latLng(46.584195223376284, 0.34446363179586115)
         ],
         createMarker: (i, wp) => {
           return L.marker(wp.latLng, {
-            draggable: true,
+            draggable: false,
             icon: L.icon({
               iconUrl: '/statics/markers/basic-marker.png',
               iconSize: this.iconSize,
