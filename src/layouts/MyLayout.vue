@@ -78,10 +78,14 @@ export default {
           justify-content center
           width 100%
 
-  .q-tab__label
-    font-size 11px
-  .q-tab__icon
-    font-size 16px
+  .q-tab
+    min-height 78px
+    .q-tab__content
+      padding-bottom 20px
+    .q-tab__label
+      font-size 11px
+    .q-tab__icon
+      font-size 16px
 
   .q-tab--active
     color $primary !important
