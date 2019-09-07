@@ -29,7 +29,7 @@
         </q-card-section>
         <q-separator />
         <q-card-section v-if="getEventsBySpeaker(speaker.name).length > 0">
-          <h6 class="text-secondary">Ces interventions</h6>
+          <h6 class="text-secondary">Ses interventions</h6>
           <q-list v-for="event in getEventsBySpeaker(speaker.name)" :key="event.id" separator>
             <q-item :class="'type-' + event.type">
               <q-item-section>
