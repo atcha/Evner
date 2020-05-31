@@ -77,6 +77,7 @@ module.exports = function (ctx) {
     supportIE: false,
 
     build: {
+      modern: true,
       scopeHoisting: true,
       // vueRouterMode: 'history',
       vueCompiler: true,
