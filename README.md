@@ -1,4 +1,4 @@
-# event planer (event-planet)
+# event planer
 
 This app is used to planify your event. Show the program etc.
 It's dev based on Quasar.
